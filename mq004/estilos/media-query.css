@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+
+/* Todas as Demais Mídias */
+
+/* Typical Device Breakpoints 
+
+Pequenas telas: até 600px
+Celular: de 600px até 768px
+Tablet: 768px até 992px
+Desktop: 992px 1200px
+Grandes telas: acima de 1200px
+*/
+
+@media print { /* IMPRESSÂO */
+    * {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    body {
+        /* background-image é desnecessário em media print pq não funciona */
+        background-image: url('../imagens/back-print.jpg');
+        
+    }
+    
+    main {
+        width: 90%;
+        border: 2px solid black;
+    }
+
+    main::after {
+        content: 'Este site foi desenvolvido por Idinaldo';
+        font-size: 16px;
+    }
+
+    main h1 {
+        
+        text-shadow: none;
+        color: black;
+    }
+
+    #phone { display: none; }
+    #print { display: block; }    
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { /* TABLET */
+    body {
+        background-image: url('../imagens/back-tablet.jpg');
+    }
+
+    #phone { display: none; }
+    #tablet { display: block; }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) { /* DESKTOP */
+    body {
+        background-image: url('../imagens/back-pc.jpg');
+    }
+
+    #phone { display: none; }
+    #pc { display: block; }
+}
+
+@media screen and (min-width: 1200px) { /* GRANDES TELAS */
+    body {
+        background-image: url('../imagens/back-tv.jpg');
+    }
+    
+    main {
+        width: 700px;
+    }
+
+    #phone { display: none; }
+    #tv { display: block;}
+}
+
+
+
+
+
